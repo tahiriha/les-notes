@@ -3,9 +3,10 @@
 
 int main()
 {
-    float class1[13],class2[15] ;
-    float min , max , valid ;
+    float class1[13],class2[15] , notes [28] ;
+    float min , max , valid , P ;
     int i = 0;
+    int j ; 
 
             for ( i=0 ; i<13 ; i++ ) {
                 printf("veuillez saisir la note de l'etudiant de la classe 1  numero  %d \n", i+1 );
@@ -75,6 +76,34 @@ printf (" le nombre des etudiants vaLidee est %f \n", valid);
     }
 
 printf (" le nombre des etudiants vaLidee est %f \n", valid);
+    
+    for ( i=0 ; i<=12 ; i++)
+    {
+        notes[i] = class1[i];
+    }
+    for ( i=0 ; i<=14    ; i++)
+    {
+        notes[13 + i ] = class2[i];
+    }
+
+    for ( i = 0 ; i <= 28 ; i++ )
+    {
+        for ( j = i + 1 ; j <  28 ; i++ )
+        {
+            if ( notes[i] < notes [j])
+            {
+                P = notes [i];
+                notes[i] = notes [j];
+                notes [i] = P;
+            }
+        }
+    }
+
+    printf(" les notes des deux classe en ordre sont ");
+    for ( i = 0 ; i <= 28 ; i++ )
+    {
+        printf("%f/n", &notes[i]);
+    }
 
 
 
